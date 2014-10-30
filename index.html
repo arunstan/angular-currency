@@ -1,0 +1,40 @@
+
+<html ng-app="currencyApp">
+<head><title>Currency App</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<style>
+	section#main {
+		margin:22.5% 0;
+	}
+
+</style>
+
+</head>
+<body ng-controller="MainCtrl as ctrl">
+<section id="main">
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
+		<div class="center-block">
+			<form ng-submit="ctrl.submit()" class="form-inline">
+				
+				<input class="form-control" type="text" ng-model="ctrl.currencyOneValue" ng-change="ctrl.updateCurrency2()">
+				<select class="form-control" ng-model="ctrl.currencyOneCode" ng-options="key as key for (key,value) in ctrl.currencies" ng-change="ctrl.updateCurrency2()">
+				</select>
+
+				<input class="form-control" type="text" ng-model="ctrl.currencyTwoValue" ng-change="ctrl.updateCurrency1()">
+				<select class="form-control" ng-model="ctrl.currencyTwoCode" ng-options="key as key for (key,value) in ctrl.currencies" ng-change="ctrl.updateCurrency1()"></select>
+
+			</form>
+		</div>
+	</div>
+</div>
+</section>
+	<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
