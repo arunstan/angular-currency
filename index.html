@@ -20,21 +20,21 @@
 			<form ng-submit="ctrl.submit()" class="form-inline">
 				
 				<input class="form-control" type="text" ng-model="ctrl.currencyOneValue" ng-change="ctrl.updateCurrency2()">
-				<select class="form-control" ng-model="ctrl.currencyOneCode" ng-options="key as key for (key,value) in ctrl.currencies" ng-change="ctrl.updateCurrency2()">
+				<select class="form-control" ng-model="ctrl.currencyOneCode" ng-options="key as key for (key,value) in ctrl.currencies" ng-change="ctrl.updateCurrency1()">
 				</select>
 
 				<input class="form-control" type="text" ng-model="ctrl.currencyTwoValue" ng-change="ctrl.updateCurrency1()">
-				<select class="form-control" ng-model="ctrl.currencyTwoCode" ng-options="key as key for (key,value) in ctrl.currencies" ng-change="ctrl.updateCurrency1()"></select>
+				<select class="form-control" ng-model="ctrl.currencyTwoCode" ng-options="key as key for (key,value) in ctrl.currencies" ng-change="ctrl.updateCurrency2()"></select>
 
 			</form>
+			<span>Last updated at {{ctrl.currencyLastUpdated | date:'mediumTime'}}</span>
+			<a href="#" ng-click="ctrl.loadCurrencies()">Update Now</a>
 		</div>
 	</div>
 </div>
 </section>
-	<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
-</script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
 <script src="js/app.js"></script>
 </body>
 </html>
